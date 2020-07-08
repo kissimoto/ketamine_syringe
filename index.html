@@ -22,7 +22,7 @@
             <td><input type="number"  id="loadingDoseRate" required dose rate value="" placeholder="0.25-0.5 mg/kg"></td>
         </tr>
         <tr>
-            <td></td>
+            <td><button onclick="myFunction()" id='reloadButton'> Change Dose </button></td>
             <td><button onclick=ketaprocess() id='submitbutton'>Calculate</button></td>
         </tr>
     </tbody>
@@ -30,13 +30,14 @@
         </div>
         <br>
           <div id=result1></div>
-        
+          <p id="error"></p>
             <script src=ketasyringe.js></script>
-    <div class='wrapper'>
-        
+            
+
+    <div class='wrapper'>   
         <h2>Ketamine Syringe CRI</h2> 
-        <h3 id="threeheader">Intra operative 0.6 mg/kg/hr (10 μg/kg/min)</h3>
-        <h3 id="threeheader">Post operative 0.12 - 0.3 mg/kg/hr (2-5 μg/kg/min)</h3>    
+        <h3 id="threeheader">Intraoperative 0.6 mg/kg/hr (10 μg/kg/min)</h3>
+        <h3 id="threeheader">Postoperative 0.12 - 0.3 mg/kg/hr (2-5 μg/kg/min)</h3>    
         <br>
     <table>
     <tbody>
@@ -45,19 +46,25 @@
         <td><input type="number"  id="criDuration" required value="" placeholder="hr"></td>
     </tr>
         <td> <label for=syringSize>Syringe Size (ml)</label></td>  
-        <td><input type="number"  id="syringSize" required value="" placeholder="ml"></td>
+        <td><select id='syringeSize'>
+            <option value='5'>5 ml</option>
+            <option value='10'>10 ml</option>
+            <option value='20'>20 ml</option>
+        </select></td>
     </tr>
     <tr>
         <td> <label for=ketamine>Ketamine Dose Rate (mg/kg/hr)</label></td>  
         <td><input type="number"  id="ketamine" required value="" placeholder="mg/kg/hr"></td>
     </tr>
     <tr>
-        <td></td>
+        <td><button onclick="refresh()" id='refresh'> Reset Value </button></td>
         <td> <button onclick=ketaSyrProcess() id='submitbutton'>Calculate</button></td>
+
     </tr>
 </tbody>
 </table>
     <div id="result"></div> 
+    <p id="error2"></p>
     <script src=ketasyringe.js></script>
    
 </div>
